@@ -18,7 +18,15 @@ def wordle():
     gw = WordleGWindow()
     gw.add_enter_listener(enter_action)
 
+    # Milestone_1
+    Milestone_1 = random.choice(FIVE_LETTER_WORDS)
+    for col, letter in enumerate(Milestone_1):
+        row = 0
+        gw.set_square_letter(row, col, letter)
+        
+
 # Startup code
 
 if __name__ == "__main__":
     wordle()
+
