@@ -14,8 +14,8 @@ def wordle():
     #Check if word is from dictionary
     def check_word(s):
         word = ""
+        row = gw.get_current_row() #sets current row 
         for col, letter in enumerate(Milestone_1):
-            row = 0
             letter = gw.get_square_letter(row, col)
             word = word + letter
         lowercase = word.lower()
@@ -24,10 +24,13 @@ def wordle():
             gw.show_message("Yep")
         else:
             gw.show_message("Not in word list")
+        #Increments current row by 1 each time enter is pressed
+        row += 1
+        gw.set_current_row(row)
+
 
     gw = WordleGWindow()
     gw.add_enter_listener(check_word)
-    
 
     # Milestone_1
     Milestone_1 = random.choice(FIVE_LETTER_WORDS)
