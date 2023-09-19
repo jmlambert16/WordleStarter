@@ -22,8 +22,16 @@ def wordle():
 
         if lowercase in FIVE_LETTER_WORDS:
             gw.show_message("Yep")
+            
+            #if word is dictionary then it changes green
+            for col, letter in enumerate(Milestone_1):
+                gw.set_square_color(row, col, 'green')
         else:
             gw.show_message("Not in word list")
+            #if word is not in dictionary then it changes red
+            for col, letter in enumerate(Milestone_1):
+                gw.set_square_color(row, col, 'red')
+
         #Increments current row by 1 each time enter is pressed
         row += 1
         gw.set_current_row(row)
